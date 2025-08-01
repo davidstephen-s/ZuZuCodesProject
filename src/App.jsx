@@ -1,15 +1,25 @@
-import React from 'react';
-import { HelmetProvider } from 'react-helmet-async';
-import Header from './components/Header';
-import MainContent from './components/MainContent';
-import './App.css';
+import React, { Suspense, lazy } from "react";
+import { HelmetProvider } from "react-helmet-async";
+import "./App.css";
+
+// Lazy load components
+const Header = lazy(() => import("./components/Header"));
+const MainContent = lazy(() => import("./components/MainContent"));
 
 function App() {
   return (
     <HelmetProvider>
       <div className="min-h-screen bg-gray-50">
-        <Header />
-        <MainContent />
+        <Suspense
+          fallback={
+            <div className="spinner-container">
+              <div className="spinner"></div>
+            </div>
+          }
+        >
+          <Header />
+          <MainContent />
+        </Suspense>
       </div>
     </HelmetProvider>
   );
