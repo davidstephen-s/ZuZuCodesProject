@@ -7,7 +7,6 @@ import Card from "./Card";
 
 const MainContent = () => {
   const [activeTab, setActiveTab] = useState("matches");
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const [filters, setFilters] = useState({
     rating: null,
@@ -15,13 +14,6 @@ const MainContent = () => {
     response: null,
     sort: "best",
   });
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const matches = [
     {
@@ -140,26 +132,22 @@ const MainContent = () => {
 
       <main className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Back Button - Desktop */}
-        {!isMobile && (
-          <div className="mb-6">
-            <button className="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded-lg font-medium text-sm transition-colors">
-              Back
-            </button>
-          </div>
-        )}
+        <div className="mb-6 card-cta">
+          <button className="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded-lg font-medium text-sm transition-colors">
+            Back
+          </button>
+        </div>
 
         {/* Page Title */}
         <div className="text-center mb-6">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Web Designer
           </h1>
-          {isMobile && (
-            <p className="text-gray-600 text-sm mb-6 px-4">
-              Your Top 5 local professional matches are below. You can contact
-              any of the professionals to get more information using the contact
-              button.
-            </p>
-          )}
+          <p className="text-gray-600 text-sm mb-6 px-4 hidden-true">
+            Your Top 5 local professional matches are below. You can contact any
+            of the professionals to get more information using the contact
+            button.
+          </p>
         </div>
 
         {/* Tab Navigation */}

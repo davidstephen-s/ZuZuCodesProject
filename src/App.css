@@ -702,6 +702,9 @@ body {
   }
 }
 
+.hidden-true {
+  display: none !important;
+}
 /* Focus states for accessibility */
 button:focus,
 a:focus {
@@ -719,6 +722,9 @@ a:focus {
   }
 }
 @media (max-width: 767px) {
+  .hidden-true {
+    display: block !important;
+  }
   .card-root {
     flex-direction: column !important;
     border-radius: 0.75rem;
