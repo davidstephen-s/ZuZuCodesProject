@@ -869,3 +869,18 @@ a:focus {
 .animate-fade-in {
   animation: fadeIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+@media (max-width: 767px) {
+  .px-4 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .lg\:px-8,
+  .sm\:px-6 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  main {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
