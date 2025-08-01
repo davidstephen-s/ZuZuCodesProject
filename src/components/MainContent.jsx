@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import Herosection from "./Herosection";
+import Herosection from "./HeroSection";
 import FiltersBar from "./FiltersBar";
 import RecommendedBanner from "./RecommendedBanner";
 import Card from "./Card";
