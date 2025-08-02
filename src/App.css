@@ -4,16 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Poppins";
-  font-style: normal;
-  line-height: 1.5;
-  color: #374151;
-  background-color: #ffffff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 /* Utility classes */
 .min-h-screen {
   min-height: 100vh;

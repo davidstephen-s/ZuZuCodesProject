@@ -128,6 +128,7 @@ const MainContent = () => {
           name="description"
           content="Find top 5 expert professional web designers waiting. Get matched with the right professional for your project."
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
 
       <main className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
