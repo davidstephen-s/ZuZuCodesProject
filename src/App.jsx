@@ -10,13 +10,7 @@ function App() {
   return (
     <HelmetProvider>
       <div className="min-h-screen bg-gray-50">
-        <Suspense
-          fallback={
-            <div className="spinner-container">
-              <div className="spinner"></div>
-            </div>
-          }
-        >
+        <Suspense>
           <Header />
           <MainContent />
         </Suspense>

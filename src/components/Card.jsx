@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   CheckCircleIcon,
   StarIcon,
@@ -8,6 +8,14 @@ import {
 import { SparklesIcon } from "@heroicons/react/24/outline";
 
 const Card = ({ match }) => {
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  // Prevent mismatch by not rendering until after hydration
+  if (!hydrated) return null;
   // Only show the first skill on mobile
   const firstSkill = match.skills?.[0];
 
